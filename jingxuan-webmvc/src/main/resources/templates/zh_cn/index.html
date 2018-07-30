@@ -1,0 +1,41 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title>互市宝</title>
+</head>
+<body>
+	<form enctype="multipart/form-data" action="/admin/save/product/category" method="post" style="margin-top:10px;">
+		<table>
+			<tr>
+				<td>
+					名称： <input type="text" name="name" id="name" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					排序： <input type="text" name="sort" id="sort" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					描述：<textarea name="remark" id="remark" maxlength="256"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					图片：<input type="file" name="imageStream" accept="image/jpeg, image/png"/>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<button type="submit">上传</button>
+				</td>
+			</tr>								
+		</table>
+	</form>
+</body>
+</html>

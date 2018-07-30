@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiameng.jingxuan.mapper.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.jiameng.jingxuan.model.domain.Product" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="img_url_web" property="imgUrlWeb" jdbcType="VARCHAR" />
+    <result column="img_url_app" property="imgUrlApp" jdbcType="VARCHAR" />
+    <result column="img_url_main" property="imgUrlMain" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jiameng.jingxuan.model.domain.Product" extends="BaseResultMap" >
+    <result column="remark" property="remark" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, category_id, sort, img_url_web, img_url_app, img_url_main, create_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    remark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from product
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from product
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jiameng.jingxuan.model.domain.Product" >
+    insert into product (id, name, category_id, 
+      sort, img_url_web, img_url_app, 
+      img_url_main, create_time, remark
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, 
+      #{sort,jdbcType=INTEGER}, #{imgUrlWeb,jdbcType=VARCHAR}, #{imgUrlApp,jdbcType=VARCHAR}, 
+      #{imgUrlMain,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{remark,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jiameng.jingxuan.model.domain.Product" >
+    insert into product
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="imgUrlWeb != null" >
+        img_url_web,
+      </if>
+      <if test="imgUrlApp != null" >
+        img_url_app,
+      </if>
+      <if test="imgUrlMain != null" >
+        img_url_main,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="imgUrlWeb != null" >
+        #{imgUrlWeb,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrlApp != null" >
+        #{imgUrlApp,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrlMain != null" >
+        #{imgUrlMain,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jiameng.jingxuan.model.domain.Product" >
+    update product
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="imgUrlWeb != null" >
+        img_url_web = #{imgUrlWeb,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrlApp != null" >
+        img_url_app = #{imgUrlApp,jdbcType=VARCHAR},
+      </if>
+      <if test="imgUrlMain != null" >
+        img_url_main = #{imgUrlMain,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jiameng.jingxuan.model.domain.Product" >
+    update product
+    set name = #{name,jdbcType=VARCHAR},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER},
+      img_url_web = #{imgUrlWeb,jdbcType=VARCHAR},
+      img_url_app = #{imgUrlApp,jdbcType=VARCHAR},
+      img_url_main = #{imgUrlMain,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      remark = #{remark,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jiameng.jingxuan.model.domain.Product" >
+    update product
+    set name = #{name,jdbcType=VARCHAR},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      sort = #{sort,jdbcType=INTEGER},
+      img_url_web = #{imgUrlWeb,jdbcType=VARCHAR},
+      img_url_app = #{imgUrlApp,jdbcType=VARCHAR},
+      img_url_main = #{imgUrlMain,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

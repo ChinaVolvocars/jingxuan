@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jingxuan-admin" />
+        <module name="jingxuan-common" />
+        <module name="jingxuan-mapper" />
+        <module name="jingxuan-model" />
+        <module name="jingxuan-service" />
+        <module name="jingxuan-webmvc" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jingxuan" target="1.8" />
+      <module name="jingxuan-admin" target="1.8" />
+      <module name="jingxuan-common" target="1.8" />
+      <module name="jingxuan-mapper" target="1.8" />
+      <module name="jingxuan-model" target="1.8" />
+      <module name="jingxuan-service" target="1.8" />
+      <module name="jingxuan-webmvc" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

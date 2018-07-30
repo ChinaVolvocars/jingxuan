@@ -1,0 +1,44 @@
+spring:
+  jmx:
+    enabled: false
+  thymeleaf:
+    cache: false
+  mobile: 
+    devicedelegatingviewresolver:
+      enabled: true
+      mobile-prefix: 
+      tablet-prefix: 
+      mobile-suffix: .mobile
+      tablet-suffix: .mobile  #.tablet
+      
+  datasource:
+    url: jdbc:mysql://192.168.1.216:3306/test
+    username: root
+    password: jiayuanweiyin
+    validation-query: SELECT 1
+    test-on-borrow: true      
+      
+mybatis:
+  config: mybatis-config.xml
+      
+server:
+  port: 9091
+  tomcat:
+    access-log-enabled: true
+    basedir: target/tomcat 
+  error:
+    include-stacktrace: never
+    path: /error
+    whitelabel:
+      enabled: true   
+         
+logging:
+  level:
+    com.jiayuan.bank: info
+  file: /data/log/jingxuan.webmvc.log
+resource: 
+  upload-addr: 192.168.1.206:22
+  upload-username: root
+  upload-password: 1qaz2wsx
+  download-addr: 192.168.1.206:80
+  

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 7 resources" deleteContents="false" description="Delete 7 resources" element1="/jingxuan-admin" element2="/jingxuan-common" element3="/jingxuan-mapper" element4="/jingxuan-model" element5="/jingxuan-service" element6="/jingxuan-webmvc" element7="/Servers" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="7" stamp="1531446012651"/>
+</session>

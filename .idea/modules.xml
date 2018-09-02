@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/jingxuan.iml" filepath="$PROJECT_DIR$/jingxuan.iml" />
       <module fileurl="file://$PROJECT_DIR$/jingxuan-admin/jingxuan-admin.iml" filepath="$PROJECT_DIR$/jingxuan-admin/jingxuan-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/jingxuan-common/jingxuan-common.iml" filepath="$PROJECT_DIR$/jingxuan-common/jingxuan-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/jingxuan-mapper/jingxuan-mapper.iml" filepath="$PROJECT_DIR$/jingxuan-mapper/jingxuan-mapper.iml" />

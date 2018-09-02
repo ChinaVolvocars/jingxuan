@@ -14,9 +14,11 @@ import com.jiameng.jingxuan.service.impl.AdminServiceImpl;
 @Configuration
 @EnableCaching
 public class ServiceAutoConfiguration {
+	
 	@Bean
 	@ConditionalOnMissingBean
 	public IAdminService adminService() {
 		return new AdminServiceImpl();
 	}
+	
 }

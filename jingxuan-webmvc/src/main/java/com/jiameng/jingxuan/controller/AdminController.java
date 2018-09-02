@@ -51,17 +51,32 @@ public class AdminController {
   protected WebMVCResourceProperties properties;
 
   /**
+   * 测试编码
+   */
+  @RequestMapping(value = "/test", method = RequestMethod.POST)
+  @ResponseBody
+  public JSONObject test(@RequestBody JSONObject search) {
+    JSONObject result = new JSONObject();
+    String name = search.getString("name");
+    logger.debug("========测试编码========:" + name);
+    System.out.println("========测试编码========:" + name);
+    if (idNull(result, StringUtils.isBlank(name), "产品类目名称不能为空！", EMPTY)) return result;
+    
+    result.put("name",name);
+
+    return result;
+  }
+
+  /**
    * 搜索产品
    */
   @RequestMapping(value = "/product/search", method = RequestMethod.POST)
   @ResponseBody
   public JSONObject search(@RequestBody JSONObject search) {
     JSONObject result = new JSONObject();
-
     String name = search.getString("name");
     if (idNull(result, StringUtils.isBlank(name), "产品类目名称不能为空！", EMPTY)) return result;
-
-    return null;
+    return result;
   }
 
 

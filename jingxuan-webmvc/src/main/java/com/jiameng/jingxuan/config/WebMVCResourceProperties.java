@@ -14,6 +14,8 @@ public class WebMVCResourceProperties {
   private String config = "";
   private String username;
 
+  private String na = "主分支";
+
   public String getSession() {
     return session;
   }

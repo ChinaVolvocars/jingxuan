@@ -13,6 +13,7 @@ public class WebMVCResourceProperties {
   private String downloadAddr = "192.168.1.206:80";
   private String config = "";
   private String username;
+  private String branc;
 
   public String getSession() {
     return session;

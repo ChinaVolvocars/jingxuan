@@ -14,6 +14,7 @@ public class WebMVCResourceProperties {
   private String config = "";
   private String username;
   private String branc;
+  private String b = "dev分支";
 
   public String getSession() {
     return session;

@@ -15,6 +15,9 @@ public class WebMVCResourceProperties {
   private String username;
 
   private String na = "主分支";
+  private String na1 = "主分支";
+  private String na2 = "主分支";
+  private String na3 = "主分支";
 
   public String getSession() {
     return session;

@@ -5,8 +5,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ThreadFactory;
 
 public class ConstantUtil {
-	public static final String DOMAIN = "www.yinkejinrong.com";
-	public static final String WILDCARD_DOMAIN = "yinkejinrong.com";
+	public static final String DOMAIN = "www.meahu.com";
+	public static final String WILDCARD_DOMAIN = "meahu.com";
 	public static final String BACK_SLASH = "\\";
 	public static final String ASTERISK = "*";
 	public static final String SHARP = "#";

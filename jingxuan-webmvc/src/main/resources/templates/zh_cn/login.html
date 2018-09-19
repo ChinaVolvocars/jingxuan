@@ -1,13 +1,13 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8"/>
-<title>登录界面</title>
+    <meta charset="UTF-8"/>
+    <title>登录界面</title>
 </head>
 <body>
-	
-	欢迎你，<h3 th:text="${loginName}"></h3>
-	
-	热烈欢迎你，<p th:inline="text">[[${loginName}]]</p>
+
+欢迎你，<h3 th:text="${loginName}"></h3>
+
+热烈欢迎你，<p th:inline="text">[[${loginName}]]</p>
 </body>
 </html>

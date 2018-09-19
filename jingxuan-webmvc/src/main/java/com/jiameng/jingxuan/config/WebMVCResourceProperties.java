@@ -12,6 +12,7 @@ public class WebMVCResourceProperties {
   private String uploadPassword = "1qaz2wsx";
   private String downloadAddr = "192.168.1.206:80";
   private String config = "";
+  private String username;
 
   public String getSession() {
     return session;

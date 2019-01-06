@@ -17,6 +17,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
+import com.jiameng.jingxuan.model.domain.Banner;
+import com.jiameng.jingxuan.service.BannerService;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -43,12 +45,35 @@ import com.jiameng.jingxuan.utils.FileUploadUtil;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+
   private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
 
   @Autowired
+  protected WebMVCResourceProperties properties;
+  @Autowired
   IAdminService adminService;
   @Autowired
-  protected WebMVCResourceProperties properties;
+  BannerService bannerService;
+
+
+  @ResponseBody
+  @RequestMapping(value = "/banner", method = RequestMethod.POST)
+  public JSONObject getBanner(@RequestBody JSONObject banner) {
+    JSONObject result = new JSONObject();
+    String id = banner.getString("id");
+    if (StringUtils.isBlank(id)) {
+      result.put("code", ERROE);
+      result.put("msg", "id 不能为空");
+      result.put(DATA, null);
+    }
+    result.put(CODE, SUCCESS);
+    result.put(MSG, "success");
+    Banner bannerById = bannerService.getBannerById(Integer.valueOf(id));
+    result.put(DATA, bannerById);
+    return result;
+
+
+  }
 
   /**
    * 搜索产品
@@ -59,6 +84,9 @@ public class AdminController {
     JSONObject result = new JSONObject();
     String name = search.getString("name");
     if (idNull(result, StringUtils.isBlank(name), "产品类目名称不能为空！", EMPTY)) return result;
+    result.put(DATA, "");
+    result.put(CODE, 200);
+    result.put(MSG, "成功");
     return result;
   }
 
